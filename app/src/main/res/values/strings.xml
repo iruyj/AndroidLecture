@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">chapter4_Ex</string>
+    <string name="btn_str">버튼입니다.</string>
 </resources>
