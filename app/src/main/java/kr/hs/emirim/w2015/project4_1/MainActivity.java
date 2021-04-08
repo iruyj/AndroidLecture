@@ -3,11 +3,13 @@ package kr.hs.emirim.w2015.project4_1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText edit1,edit2;
@@ -39,9 +41,14 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             String strEdit1 = edit1.getText().toString();
             String strEdit2 = edit2.getText().toString();
-            int num1 = Integer.parseInt(strEdit1);
-            int num2 = Integer.parseInt(strEdit2);
-            int result =0;
+            Log.v("***strEdit1",strEdit1);
+            if(strEdit1==null || strEdit1.equals("")||strEdit2==null || strEdit2.equals("")){
+                Toast.makeText(getApplicationContext(), "계산에 필요한 값을 입력해주세요.",Toast.LENGTH_SHORT).show();
+                return;
+            }
+            double num1= Double.parseDouble(strEdit1);
+            double num2= Double.parseDouble(strEdit2);
+            double result = 0;
             switch (v.getId()){
                 case R.id.btn1:
                     result = num1+num2;
@@ -60,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             textResult.setText(R.string.t1); //t1으로 text 뒤로 돌아가서
-            textResult.append(" "+result+""); //그 뒤에 출력해줌
+            textResult.append(String.format("%.2f",result)+""); //그 뒤에 출력해줌
         }
     };
 }
