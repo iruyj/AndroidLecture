@@ -36,21 +36,21 @@
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn1"
+        android:text="@string/btn2"
         android:layout_marginBottom="20dp"
         android:padding="20dp"/>
     <Button
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn1"
+        android:text="@string/btn3"
         android:layout_marginBottom="20dp"
         android:padding="20dp"/>
     <Button
         android:id="@+id/btn4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn1"
+        android:text="@string/btn4"
         android:layout_marginBottom="20dp"
         android:padding="20dp"/>
 

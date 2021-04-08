@@ -26,20 +26,20 @@ public class MainActivity extends AppCompatActivity {
         edit2 = findViewById(R.id.edit2);
         textResult=findViewById(R.id.t1);
 
-        btnPlus.setOnTouchListener(btnLisener);
-        btnMinus.setOnTouchListener(btnLisener);
-        btnMulti.setOnTouchListener(btnLisener);
-        btnDiv.setOnTouchListener(btnLisener);
+        btnPlus.setOnClickListener(btnLisener);
+        btnMinus.setOnClickListener(btnLisener);
+        btnMulti.setOnClickListener(btnLisener);
+        btnDiv.setOnClickListener(btnLisener);
     }
 
-    View.OnTouchListener btnLisener = new View.OnTouchListener() {
+    View.OnClickListener btnLisener= new View.OnClickListener() {
         @Override
-        public boolean onTouch(View v, MotionEvent event) {
-           String strEdit1 = edit1.getText().toString();
-           String strEdit2 = edit2.getText().toString();
-           int num1 = Integer.parseInt(strEdit1);
-           int num2 = Integer.parseInt(strEdit2);
-           int result =0;
+        public void onClick(View v) {
+            String strEdit1 = edit1.getText().toString();
+            String strEdit2 = edit2.getText().toString();
+            int num1 = Integer.parseInt(strEdit1);
+            int num2 = Integer.parseInt(strEdit2);
+            int result =0;
             switch (v.getId()){
                 case R.id.btn1:
                     result = num1+num2;
@@ -54,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     result = num1/num2;
                     break;
             }
-            textResult.setText(R.string.t1); //t1으로 가서
-            textResult.append(result+""); //보여주는 것
-            return false;
+            textResult.setText(R.string.t1); //t1으로 text 뒤로 돌아가서
+            textResult.append(" "+result+""); //그 뒤에 출력해줌
         }
     };
 }
