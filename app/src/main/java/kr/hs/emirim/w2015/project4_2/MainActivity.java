@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.btn_done);
 
         checkStart.setOnCheckedChangeListener(checkListener);
+        btn.setOnClickListener(btnListener);
     }
 
     CompoundButton.OnCheckedChangeListener checkListener = new CompoundButton.OnCheckedChangeListener() {
