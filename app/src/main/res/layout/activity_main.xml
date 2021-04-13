@@ -46,19 +46,21 @@
                 android:id="@+id/radio_cat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radio_dog"/>
+                android:text="@string/radio_cat"/>
             <RadioButton
                 android:id="@+id/radio_rabbit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radio_dog"/>
+                android:text="@string/radio_rabbit"/>
         </RadioGroup>
 
         <Button
+            android:id="@+id/btn_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio_dog"/>
+            android:text="@string/btn_done"/>
         <ImageView
+            android:id="@+id/imgv"
             android:layout_width="4000dp"
             android:layout_height="3000dp"
             android:layout_marginTop="20dp"
