@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
-    CheckBox checkStart;
+    Switch switchStart;
     RadioGroup rg;
     ImageView imgv;
     LinearLayout linear;
@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        checkStart = findViewById(R.id.start);
+        switchStart = findViewById(R.id.switch_start);
         linear = findViewById(R.id.linear);
         rg = findViewById(R.id.radio_group);
         imgv = findViewById(R.id.imgv);
         Button btn = findViewById(R.id.btn_done);
 
-        checkStart.setOnCheckedChangeListener(checkListener);
+        switchStart.setOnCheckedChangeListener(checkListener);
         btn.setOnClickListener(btnListener);
     }
 
