@@ -22,5 +22,4 @@
         android:paddingRight="60dp"
         android:text="@string/btn2"/>
 
-
 </LinearLayout>
