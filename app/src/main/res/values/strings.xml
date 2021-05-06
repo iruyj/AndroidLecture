@@ -3,4 +3,7 @@
     <string name="btn1">버튼1</string>
     <string name="btn2">버튼2</string>
     <string name="btn3">버튼3</string>
+    <string name="text1">글자 1</string>
+    <string name="text2">글자 2</string>
+    <string name="text3">글자 3</string>
 </resources>
