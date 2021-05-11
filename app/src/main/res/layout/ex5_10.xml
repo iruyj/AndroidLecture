@@ -2,9 +2,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<!-- 수평 가운데: layout_centerHorizontal
+     수직 가운데 : layout_centerVertical
+     위치 잡기 (왼쪽,오른쪽,중앙): layout_alignParentRight -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_top"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_bottom"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/btn_left"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="@string/btn_right"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/btn_center"/>
 </RelativeLayout>
