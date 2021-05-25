@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_frame);
 
         linearDog = findViewById(R.id.linear_dog);
         linearCat = findViewById(R.id.linear_cat);
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnCat.setOnClickListener(btnLinear);
         btnUga.setOnClickListener(btnLinear);
     }
+
     View.OnClickListener btnLinear = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

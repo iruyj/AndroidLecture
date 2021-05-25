@@ -29,7 +29,6 @@
             android:text="@string/btn3"
             android:layout_marginRight="10dp"/>
 
-
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
@@ -40,7 +39,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/dog"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linear_cat"
@@ -49,7 +53,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/cat"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/linear_uga"
@@ -58,7 +67,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:src="@drawable/gorila"/>
         </LinearLayout>
 
     </FrameLayout>
