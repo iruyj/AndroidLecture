@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ex6</string>
+    <string name="text_out">여기는 서랍 밖입니다</string>
+    <string name="btn_handle">서랍 손잡이</string>
+    <string name="text_in">여기는 서랍 안입니다.</string>
+</resources>
