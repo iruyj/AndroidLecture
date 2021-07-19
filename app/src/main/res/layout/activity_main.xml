@@ -4,13 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff00ff"
     tools:context=".MainActivity">
-
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radio_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="second Activity"/>
+        <RadioButton
+            android:id="@+id/radio_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Third Activity"/>
+    </RadioGroup>
     <Button
-        android:id="@+id/btn_third_close"
+        android:id="@+id/btn_open"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Third Activity close"/>
+        android:text="New Activity Open"/>
+    
 
 </LinearLayout>
