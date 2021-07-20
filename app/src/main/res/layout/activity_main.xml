@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,17 +13,43 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="첫번째 숫자 입력"
         android:inputType="numberDecimal"/>
     <EditText
         android:id="@+id/edit2"
         android:layout_marginTop="10dp"
+        android:hint="두번째 숫자 입력"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"/>
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rplus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="더하기"/>
+        <RadioButton
+            android:id="@+id/rminus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="빼기"/>
+        <RadioButton
+            android:id="@+id/rmulti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="곱하기"/>
+        <RadioButton
+            android:id="@+id/rdivice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="나누기"/>
+    </RadioGroup>
     <Button
-        android:id="@+id/btn_plus"
+        android:id="@+id/btn_calc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_plus"/>
-
+        android:text="@string/btn_clac"/>
 </LinearLayout>
