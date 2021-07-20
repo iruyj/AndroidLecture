@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText edit1,edit2;
@@ -33,9 +34,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    // 세컨드에서 값을 받아오는 함수
+    // 세
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK ){
+            int sum = data.getIntExtra("sum",0);
+            Toast.makeText(getApplicationContext(),"합계 : "+sum, Toast.LENGTH_SHORT ).show();
+        }
     }
 }
