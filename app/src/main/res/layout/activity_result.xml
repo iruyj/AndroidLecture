@@ -15,14 +15,14 @@
         android:gravity="center_horizontal"
         android:text="@string/result_title"
         android:textSize="25sp"
-        android:textColor="#430987"
+        android:textColor="#020D4C"
         android:layout_marginBottom="50dp"
         android:textStyle="bold"/>
     <ImageView
         android:id="@+id/imgv"
         android:layout_width="250dp"
         android:layout_height="300dp"
-        android:scaleType="fitXY"/>
+        android:src="@drawable/bmi1"/>
     <TextView
         android:id="@+id/text_result1"
         android:layout_width="wrap_content"
