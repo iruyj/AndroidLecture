@@ -3,4 +3,6 @@
     <string name="btn_done">투표 종료</string>
     <string name="btn_back">돌아가기</string>
     <string name="title">디즈니 PRINCESS 인기투표</string>
+    <string name="btn_start">시작</string>
+    <string name="btn_stop">그만</string>
 </resources>

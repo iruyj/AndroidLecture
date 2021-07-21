@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    String[] imgNames = {"SNOW WHITE", "JASMINE","BELLE","ARIEL","ELSA","MOANA","RAPUNZEL","PACAHONTAS","CINDERELLA"};
+    String[] imgNames = {"SNOW WHITE", "JASMINE","BELLE","ELSA","ARIEL","MOANA","RAPUNZEL","PACAHONTAS","CINDERELLA"};
     int[] imgVIds = {R.id.img01,R.id.img02,R.id.img03,R.id.img04,R.id.img05,R.id.img06,R.id.img07,R.id.img08,R.id.img09};
     int[] voteCount = new int[imgVIds.length];
     ImageView[] image = new ImageView[imgVIds.length];
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     voteCount[index]++;
                     Log.v("확인", imgNames[index]+"총"+voteCount[index]+"표");
-                    Toast.makeText(getApplicationContext(), imgNames[index]+" 총 "+voteCount[index]+"표", Toast.LENGTH_SHORT).toString();
+                    Toast.makeText(getApplicationContext(), imgNames[index]+" 총 "+voteCount[index]+"표", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ResultActivity2.class);
             intent.putExtra("voteCount", voteCount);
             intent.putExtra("imgNames",imgNames );
             startActivity(intent);
