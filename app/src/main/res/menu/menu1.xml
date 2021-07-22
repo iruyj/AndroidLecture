@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_red"
+        android:title="@string/item_red"/>
+    <item
+        android:id="@+id/item_yellow"
+        android:title="@string/item_yellow"/>
+    <item
+        android:id="@+id/item_blue"
+        android:title="@string/item_blue"/>
+<!--    하위메뉴 작정 -->
+    <item
+        android:title="@string/item_btn_change">
+        <menu>
+            <item
+                android:id="@+id/item_rotate"
+                android:title="@string/sub_item_rotate"/>
+            <item
+                android:id="@+id/item_zoom"
+                android:title="@string/sub_item_zoom"/>
+
+        </menu>
+    </item>
+</menu>
