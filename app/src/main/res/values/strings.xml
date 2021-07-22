@@ -8,7 +8,7 @@
     <string name="item_btn_change">버튼 변경</string>
     <string name="sub_item_rotate">버튼 45도 회전</string>
     <string name="sub_item_zoom">버튼 2배 확대</string>
-    <string name="sub_pic_rotate">버튼 2배 확대</string>
+    <string name="sub_pic_rotate">이미지 회전</string>
     <string name="item_bose_1">스테이시</string>
     <string name="item_bose_2">보스베이비</string>
     <string name="item_bose_3">팀 템플턴</string>
