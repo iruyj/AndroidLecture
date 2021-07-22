@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 linear1.setBackgroundColor(Color.RED);
                 return true;
             case R.id.item_yellow:
-                linear1.setBackgroundColor(Color.RED);
+                linear1.setBackgroundColor(Color.YELLOW);
                 return true;
             case R.id.item_blue:
-                linear1.setBackgroundColor(Color.RED);
+                linear1.setBackgroundColor(Color.BLUE);
                 return true;
             case R.id.item_rotate:
                 btn1.setRotation(45);
@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 btn1.setScaleX(2);
                 return true;
         }
-        //우리가 직접 작성할때 false로 해줌
         return false;
 
     }
