@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnF;
     ImageView imgV;
     int[] imgsArr = {R.drawable.fr1,R.drawable.fr2,R.drawable.fr3};
-
+    boolean[] checkArr = {true, false,true};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +50,19 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_fruits:
                     new AlertDialog.Builder(MainActivity.this   )
                         .setTitle(R.string.btn_fruits)
-                        .setSingleChoiceItems(fruitsArr,0,fruitsItemListener)
+                        .setMultiChoiceItems(fruitsArr, checkArr, fruitsMultiListener)
                         .setIcon(R.drawable.watermelonpng)
                         .setPositiveButton("닫기",null)
                         .show();
                     break;
             }
+        }
+    };
+
+    DialogInterface.OnMultiChoiceClickListener fruitsMultiListener = new DialogInterface.OnMultiChoiceClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+            btnF.setText(fruitsArr[which]);
         }
     };
     DialogInterface.OnClickListener fruitsItemListener = new DialogInterface.OnClickListener() {
