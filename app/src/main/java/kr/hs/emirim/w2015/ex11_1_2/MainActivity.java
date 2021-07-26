@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ListView list1 = findViewById(R.id.list1);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,arr);
+        list1.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         list1.setAdapter(adapter);
 
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
