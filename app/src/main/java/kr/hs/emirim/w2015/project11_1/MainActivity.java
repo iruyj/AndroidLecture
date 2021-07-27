@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
         GridAdapter adapter = new GridAdapter(this);
         grid1.setAdapter(adapter);
 
+
     }
 }

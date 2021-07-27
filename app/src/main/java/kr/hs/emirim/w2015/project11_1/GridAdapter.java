@@ -1,5 +1,6 @@
 package kr.hs.emirim.w2015.project11_1;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,22 @@ public class GridAdapter extends BaseAdapter {
         imgv.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imgv.setPadding(5,5,5,5);
         imgv.setImageResource(posterIds[i]); // i는 아이템 순서대로 들어온다.
+
+        final int pos = i;
+        imgv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+                View dialogView = View.inflate(context, R.layout.dialog1, null);
+                ImageView imgvLarge = dialogView.findViewById(R.id.imgv_large);
+                imgvLarge.setImageResource(posterIds[pos]);
+                dialog.setTitle("LargePoster");
+                dialog.setIcon(R.drawable.mov_icon);
+                dialog.setView(dialogView);
+                dialog.setNegativeButton("close",null);
+                dialog.show();
+            }
+        });
         return imgv;
     }
 }
