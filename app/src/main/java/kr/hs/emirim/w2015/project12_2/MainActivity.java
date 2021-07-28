@@ -28,46 +28,78 @@ public class MainActivity extends AppCompatActivity {
         editResultC = findViewById(R.id.edit_count_result);
         Button btnInit = findViewById(R.id.btn_init);
         Button btnInput = findViewById(R.id.btn_input);
+        Button btnUpdate = findViewById(R.id.btn_update);
+        Button btnDelete = findViewById(R.id.btn_delete);
         Button btnSearch = findViewById(R.id.btn_seach);
+
         
         dbHelper = new MyDBHelper(this);    //객체 생성
+        // 초기화
         btnInit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db = dbHelper.getWritableDatabase();
                 dbHelper.onUpgrade(db,1,2);
                 db.close();
+                search();
             }
         });
+        // 입력 버튼
         btnInput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db= dbHelper.getWritableDatabase();
                 db.execSQL("insert into groupTB values('"+editName.getText().toString()+"',"+editCount.getText().toString()+");");
                 db.close();
-                Toast.makeText(getApplicationContext(), "정상적으로 저장되었습니다.", Toast.LENGTH_SHORT).show();
+                search();
+                Toast.makeText(getApplicationContext(), "정상적으로 입력되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
-        btnSearch.setOnClickListener(new View.OnClickListener() {
+        // 수정
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db = dbHelper.getReadableDatabase();
-                Cursor cursor = db.rawQuery("select * from groupTB;",null);
-                String strName = "그룹 이름\r\n_________\r\n";
-                String strCount = "인원수\r\n_________\r\n";
-                while(cursor.moveToNext()){ //처음 읽을땐 데이터가 있는곳으로 이동시킴
-                    // columnIndex : 가져올 칼럼인덱스번호 0부터
-                    strName +=cursor.getString(0)+"\r\n";
-                    strCount += cursor.getInt(1)+"\r\n";
-                }
-                editResultN.setText(strName);
-                editResultC.setText(strCount);
-
-                cursor.close();
+                db = dbHelper.getWritableDatabase();
+                db.execSQL("update groupTB set count="+ Integer.parseInt(editCount.getText().toString())+" where name = '"+ editName.getText().toString() + "';");
+                search();
                 db.close();
             }
         });
+        // 삭제
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db = dbHelper.getWritableDatabase();
+                db.execSQL("DELETE FROM groupTB WHERE name= '"+ editName.getText().toString()+"';");
+                search();
+                db.close();
+            }
+        });
+        // 조회
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search();
+            }
+        });
     }
+    public void search(){
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from groupTB;",null);
+        String strName = "그룹 이름\r\n_________\r\n";
+        String strCount = "인원수\r\n_________\r\n";
+        while(cursor.moveToNext()){ //처음 읽을땐 데이터가 있는곳으로 이동시킴
+            // columnIndex : 가져올 칼럼인덱스번호 0부터
+            strName +=cursor.getString(0)+"\r\n";
+            strCount += cursor.getInt(1)+"\r\n";
+        }
+        editResultN.setText(strName);
+        editResultC.setText(strCount);
+
+        cursor.close();
+        db.close();
+    }
+
 
     public class MyDBHelper extends SQLiteOpenHelper{
 
