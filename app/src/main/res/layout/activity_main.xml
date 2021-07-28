@@ -66,12 +66,20 @@
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <EditText
-            android:id="@+id/edit_result"
+            android:id="@+id/edit_name_result"
             android:background="#FFFBD9"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+        <EditText
+            android:id="@+id/edit_count_result"
+            android:layout_weight="1"
+            android:background="#FFFBD9"
+            android:layout_width="0dp"
             android:layout_height="match_parent"/>
     </LinearLayout>
 </LinearLayout>
