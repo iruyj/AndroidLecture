@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     String selectedMusic;
     String musicPath = Environment.getExternalStorageDirectory().getPath() +"/";
     MediaPlayer media;
-    Button btnStart,btnStop;
+    boolean puse = true;
+    Button btnStart,btnStop,btnPuse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         // 버튼 코드
         btnStart = findViewById(R.id.btn_start);
         btnStop = findViewById(R.id.btn_stop);
+        btnPuse = findViewById(R.id.btn_puse);
         textMusic = findViewById(R.id.text_music);
         progressBar = findViewById(R.id.progress);
 
@@ -82,6 +84,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        btnPuse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (puse){
+                    media.stop();
+                    btnPuse.setText("이어듣기");
+                    puse = false;
+                    progressBar.setVisibility(View.INVISIBLE);
+                }else{
+                    media.start();
+                    btnPuse.setText("일시정지");
+                    puse = true;
+                    progressBar.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 media.reset();
                 btnStart.setClickable(true);
                 btnStop.setClickable(false);
+                puse = true;
+                btnPuse.setText("일시정지");
                 textMusic.setText("* 실행음악 중지 *");
                 progressBar.setVisibility(View.INVISIBLE);
             }

@@ -34,6 +34,13 @@
             android:text="@string/btn_start"
             android:layout_height="wrap_content"/>
         <Button
+            android:id="@+id/btn_puse"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:text="@string/btn_puse"
+            android:layout_height="wrap_content"/>
+        <Button
             android:id="@+id/btn_stop"
             android:layout_width="0dp"
             android:layout_weight="1"
