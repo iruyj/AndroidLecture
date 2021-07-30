@@ -12,6 +12,7 @@
         android:id="@+id/progress1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:max="100"
         android:progress="30"/>
@@ -26,6 +27,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_dec"/>
+    <TextView
+        android:id="@+id/text_seek"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <SeekBar
         android:id="@+id/seeck1"
         android:layout_width="match_parent"
