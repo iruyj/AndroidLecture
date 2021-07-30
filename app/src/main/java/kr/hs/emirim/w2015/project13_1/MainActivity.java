@@ -7,22 +7,25 @@ import android.Manifest;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ListView list1;
-    TextView textMusic;
-    ProgressBar progressBar;
+    TextView textMusic,textTime;
+    SeekBar seek1;
     ArrayList<String> arrayList;
     String selectedMusic;
     String musicPath = Environment.getExternalStorageDirectory().getPath() +"/";
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         btnStop = findViewById(R.id.btn_stop);
         btnPuse = findViewById(R.id.btn_puse);
         textMusic = findViewById(R.id.text_music);
-        progressBar = findViewById(R.id.seek1);
+        textTime = findViewById(R.id.text_time);
+        seek1 = findViewById(R.id.seek1);
 
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +82,11 @@ public class MainActivity extends AppCompatActivity {
                     btnStart.setClickable(false);
                     btnStop.setClickable(true);
                     textMusic.setText(selectedMusic+" : ");
-                    progressBar.setVisibility(View.VISIBLE);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                runOnThread();
+
             }
         });
         btnPuse.setOnClickListener(new View.OnClickListener() {
@@ -91,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
                     media.stop();
                     btnPuse.setText("이어듣기");
                     puse = false;
-                    progressBar.setVisibility(View.INVISIBLE);
                 }else{
                     media.start();
+                    runOnThread();
                     btnPuse.setText("일시정지");
                     puse = true;
-                    progressBar.setVisibility(View.VISIBLE);
                 }
+
             }
         });
 
@@ -109,11 +114,36 @@ public class MainActivity extends AppCompatActivity {
                 btnStart.setClickable(true);
                 btnStop.setClickable(false);
                 puse = true;
+                seek1.setProgress(0);
                 btnPuse.setText("일시정지");
-                textMusic.setText("* 실행음악 중지 *");
-                progressBar.setVisibility(View.INVISIBLE);
+                textMusic.setText("실행음악 중지");
+                textTime.setText(R.string.text_time);
+
             }
         });
         btnStop.setClickable(false);
+    }
+
+    public void runOnThread(){
+        new Thread(){
+            SimpleDateFormat defalte = new SimpleDateFormat("mm:ss");
+            @Override
+            public void run() {
+                if(media == null)
+                    return;
+                seek1.setMax(media.getDuration());  //음악 시간 길이
+                while(media.isPlaying()){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            seek1.setProgress(media.getCurrentPosition());
+                            textTime.setText(R.string.text_time);
+                            textTime.append(defalte.format(media.getCurrentPosition()));
+                        }
+                    });
+                    SystemClock.sleep(200);
+                }
+            }
+        }.start();
     }
 }
