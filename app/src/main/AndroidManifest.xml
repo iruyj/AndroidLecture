@@ -12,7 +12,11 @@
         <service
             android:name=".MusicService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="kr.hs.emirim.w2015.ex14_1_4"/>
+            </intent-filter>
+        </service>
 
         <activity android:name=".MainActivity">
             <intent-filter>
