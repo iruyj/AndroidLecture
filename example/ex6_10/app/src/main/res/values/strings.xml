@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ex6_10</string>
+    <string name="auto_hint1">선택하세요.</string>
+    <string name="auto_hint2">자동완성텍스트뷰</string>
+    <string name="multi_hint2">멀티자동완성텍스트뷰</string>
+</resources>
