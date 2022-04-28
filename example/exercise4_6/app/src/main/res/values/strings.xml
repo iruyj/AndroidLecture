@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Exercise4_6</string>
+    <string name="btn1">버튼1</string>
+    <string name="btn2">버튼2</string>
+    <string name="check1">Enabled 속성</string>
+    <string name="check2">Clickable 속성</string>
+    <string name="check3">45도 회전</string>
+    <string name="btn">Button</string>
+</resources>
