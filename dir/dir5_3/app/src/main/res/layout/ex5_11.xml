@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    android:layout_toLeftOf="@id/btn_base" :  @id/btn_base의 왼쪽에 배치하겠다
+        android:layout_alignTop="@id/btn_base" : 아이디가 btn_base의 위에 배치
+        layout_toLeftOf : 오른쪽/왼쪽/중간 -> /toLeftOf/
+        ayout_alignTop : 위젯 안쪽 위치-> layout_alignTop/layout_alignBottom/layout_alignBaseline
+        layout_below : 위젯 대각선,바깥쪽 위치
+        layout_centerInParent : 부모레이아웃의 가장 중앙에 배치-->
+    <Button
+        android:id="@+id/btn_base"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="@string/btn_base"
+        android:layout_centerInParent="true"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btn_base"
+        android:layout_alignTop="@id/btn_base"
+        android:text="@string/btn1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btn_base"
+        android:layout_alignBaseline="@id/btn_base"
+        android:text="@string/btn2"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btn_base"
+        android:layout_alignBottom="@id/btn_base"
+        android:text="@string/btn3"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_base"
+        android:layout_alignLeft="@id/btn_base"
+        android:text="@string/btn4"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_base"
+        android:layout_alignRight="@id/btn_base"
+        android:text="@string/btn5"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btn_base"
+        android:layout_above="@id/btn_base"
+        android:text="@string/btn6"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btn_base"
+        android:layout_below="@id/btn_base"
+        android:text="@string/btn7"/>
+
+</RelativeLayout>
