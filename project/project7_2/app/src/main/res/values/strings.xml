@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">project7_2</string>
+    <string name="btn_bg">배경색 버튼</string>
+    <string name="btn_change">버튼 변경</string>
+    <string name="item_title_bg1">빨강</string>
+    <string name="item_title_bg2">노랑</string>
+    <string name="item_title_bg3">파랑</string>
+    <string name="item_title_rotate">버튼 90도 회전</string>
+    <string name="item_title_zoom">버튼 2배 확대</string>
+
+</resources>

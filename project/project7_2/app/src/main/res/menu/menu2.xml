@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_rotate"
+        android:title="@string/item_title_rotate"/>
+    <item
+        android:id="@+id/item_zoom"
+        android:title="@string/item_title_zoom"/>
+</menu>
