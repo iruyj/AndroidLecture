@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">project10_3</string>
+    <string name="btn_call">Call Phone</string>
+    <string name="btn_finish">Finish</string>
+</resources>
