@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">chapter_ex3</string>
+    <string name="btn1">버튼 1</string>
+    <string name="btn2">버튼 2</string>
+    <string name="btn3">버튼 3</string>
+    <string name="btn4">버튼 4</string>
+    <string name="btn5">버튼 5</string>
+    <string name="text1">이건 텍스트뷰입니다.</string>
+    <string name="edit">이건 에디트텍스트입니다.</string>
+    <string name="te1">TextView 연습 1</string>
+    <string name="te2">TextView 연습 2</string>
+    <string name="te3">TextView 연습 3</string>
+    <string name="t1">textSize 속성</string>
+    <string name="t2">textColor 속성</string>
+    <string name="t3">textStyle 속성</string>
+    <string name="t4">typeface 속성</string>
+    <string name="t5">singleLine 속성singleLine 속성singleLine 속성singleLine 속성singleLine 속성singleLine 속성singleLine 속성</string>
+    <string name="hello">안녕하세요</string>
+</resources>
