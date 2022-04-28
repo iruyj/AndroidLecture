@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ex10_6_7</string>
+    <string name="btn_inc">Increment Rating</string>
+    <string name="btn_dec">Decrement Rating</string>
+</resources>
