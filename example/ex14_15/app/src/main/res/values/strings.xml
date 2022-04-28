@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ex14_15</string>
+    <string name="btn_dialog">대화상자</string>
+    <string name="dialog_title">주의사항</string>
+    <string name="dialog_messge">대화상자 연습 중 ㅋ</string>
+    <string name="btn_positive">확인</string>
+    <string name="btn_fruits">좋아하는 과일</string>
+</resources>
