@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+<!--   layout_gravity : 자식을 부모의 어디에 위치시키는지
+        gravity  :  자식 전부를 어디에 위치하게 할것인지-->
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="right"
+        android:text="@string/btn1"/>
+<!--     android:layout_gravity 속성 다음에 gravity를 한번 더 넣어주면 두번째로 들어간건 텍스트 위치가 바뀌는 거다.-->
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_gravity="left"
+        android:gravity="left|center_horizontal"
+        android:text="@string/btn2"/>
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_gravity="right"
+        android:gravity="right|bottom"
+        android:text="@string/btn3"/>
+</LinearLayout>
